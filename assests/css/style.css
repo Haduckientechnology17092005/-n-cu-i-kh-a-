@@ -249,11 +249,11 @@ p{
     width: 5px;
     height: 5px;
     background-color: #888; /* Màu sắc của thanh cuộn */
-    display: none;
+    display: flex;
   }
 .to-do-item, .doing-item, .completed-item, .blocked-item{
     width: calc(100% - 10px);
-    height: 150px;
+    height: 250px;
     margin-bottom: 10px;
     border-radius: 10px;
     transition: box-shadow 0.3s ease-in-out;
@@ -363,13 +363,13 @@ p{
 }
 .clock {
     position: absolute;
-    top: 100px;
+    top: 80%;
     left: 5px;
     scale: 0.65;
 }
 .day-month-year {
     position: absolute;
-    top: 113px;
+    top: 85%;
     left: 32px;
 }
 .edit:hover, .delete:hover {
@@ -391,11 +391,12 @@ p{
 .box-input, .box-delete {
     position: relative;
     width: 400px;
-    height: 400px;
+    height: 500px;
     background-color: white;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .text-input, .header-delete {
     margin: 10px;
@@ -488,4 +489,20 @@ p{
     font-size: 15px;
     display: none;
     z-index: 100;
+}
+@media screen and (max-width: 1400px) {
+    body {
+        overflow: auto;
+    }
+    .box-to-do-list {
+        display: block;
+    }
+    .box-to-do, .box-doing, .box-completed, .box-blocked{
+        width: 100%;
+        height: auto;
+        margin: 10px;
+    }
+    .under-line{
+        width: 90%;
+    }
 }
