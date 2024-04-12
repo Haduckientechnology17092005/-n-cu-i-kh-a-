@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="icon" href="./assests/img/Group (3).png" type="image/png">
+    <link rel="stylesheet" href="./assests/css/style.css">
+</head>
+<body>
+    <div class="main" id="main">
+        <div class="border-fixed" id="border-fixed">
+            <div class="box-input" id="box-input">
+                <div class="text-input" id="text-input">
+                    Add new task
+                </div>
+                <div class="close-add", id="close-add">
+                    <input type="submit" class="submit-close-add" id="submit-close-add" value="X">
+                </div>
+                <form action="" id="form">
+                    <input type="text" class="header-input" id="header-input" placeholder="Marketing,...">
+                    <p class="error" id="error-header">Vui lòng nhập đầy đủ thông tin</p>
+                    <br>
+                    <input type="text" class="title-input" id="title-input" placeholder="Title">
+                    <p class="error" id="error-title">Vui lòng nhập đầy đủ thông tin</p>
+                    <br>
+                    <input type="text" class="content-input" id="content-input" placeholder="Content">
+                    <p class="error" id="error-content">Vui lòng nhập đầy đủ thông tin</p>
+                    <input type="submit" class="submit-create" id="submit-create" value="Create">
+                </form>
+            </div>
+        </div>
+        <div class="border-fixed-1" id="border-fixed-1">
+            <div class="box-input" id="box-input-1">
+                <div class="text-input" id="text-input">
+                    Edit new task
+                </div>
+                <div class="close-update", id="close-update">
+                    <input type="submit" class="submit-close-update" id="submit-close-update" value="X">
+                </div>
+                <form action="" id="form-1">
+                    <input type="text" class="header-input" id="header-input-1" placeholder="Marketing,...">
+                    <br>
+                    <input type="text" class="title-input" id="title-input-1" placeholder="Title">
+                    <br>
+                    <input type="text" class="content-input" id="content-input-1" placeholder="Content">
+                    <br>
+                    <div class="choose-input" id="choose-input-1">
+                        <input type="radio" name="option" id="option1" class="option" value="1">
+                        <label for="option1">To do</label>
+                        <input type="radio" name="option" id="option2" class="option" value="2">
+                        <label for="option2">Doing</label>
+                        <input type="radio" name="option" id="option3" class="option" value="3">
+                        <label for="option3">Blocked</label>
+                        <input type="radio" name="option" id="option4" class="option" value="4">
+                        <label for="option4">Completed</label>
+                    </div>
+                    <input type="submit" class="submit-edit" id="submit-edit" value="Edit" onclick="createToDoItem()">
+                </form>
+            </div>
+        </div>
+        <div class="border-delete" id="border-delete">
+            <div class="box-delete" id="box-delete">
+                <br><br><br><br><br><br>
+                <div class="header-delete" id="header-delete">
+                    Are you sure you want to delete ?
+                </div>
+                <div class="button-delete" id="button-delete">
+                    <input type="submit" class="yes-delete" id="yes-delete" value="Yes">
+                    <input type="submit" class="no-delete" id="no-delete" value="No">
+                </div>
+            </div>
+        </div>
+        <div class="header" id="header">
+            <div class="logo" id="logo">
+            <img src="./assests/img/task.png" alt="">
+            </div>
+            <div class="new-task" id="new-task">
+                <br><br>
+                <span id="create-task" class="create-task">
+                    <img src="./assests/img/create-task.png" alt="" style="width: 30px; height: 30px">
+                </span>
+                <span id="create-task-text" class="create-task-text">
+                    New task
+                </span>
+            </div>
+        </div>
+        <div class="box-to-do-list" id="box-to-do-list">
+            <div class="box-to-do" id="box-to-do">
+                <div class="header-to-do" id="header-to-do">
+                <div class="to-do" id="to-do">
+                    <p>To do</p>
+                </div>
+                <div class="number-to-do" id="number-to-do">
+                    <span class="number-1">3</span>
+                </div>
+                </div>
+                <div class="line-to-do" id="line-to-do"></div>
+                <div class="border-to-do" id="border-to-do">
+                    <div class="to-do-item" id="to-do-item">
+                        <div class="Marketing" id="Marketing">
+                            <div class="Marketing-text" id="Marketing-text">
+                                Marketing
+                            </div>
+                        </div>
+                        <div class="edit" id="edit">
+                            <img src="./assests/img/êdit.svg" alt="">
+                        </div>
+                        <div class="delete" id="delete">
+                            <img src="./assests/img/recycle.svg" alt="">
+                        </div>
+                        <div class="body-item" id="body-item">
+                            <div class="body-item-text" id="body-item-text">
+                                Write SEO article for new product
+                            </div>
+                        </div>
+                        <div class="under-line" id="under-line"></div>
+                        <div class="footer-item" id="footer-item">
+                            <div class="footer-item-text" id="footer-item-text">
+                                This is an existenitial moment for effective altruism and the rationlist community writ-large.
+                            </div>
+                        </div>
+                        <div class="clock" id="clock">
+                            <img src="./assests/img/clock.svg" alt="">
+                        </div>
+                        <div class="day-month-year" id="day-month-year">
+                            <div class="day-month-year-text" id="day-month-year-text">
+                                June 30, 2022
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-doing" id="box-doing">
+                <div class="header-doing" id="header-doing">
+                <div class="doing" id="doing">
+                    <p>Doing</p>
+                </div>
+                <div class="number-doing" id="number-doing">
+                    <span class="number-2">3</span>
+                </div>
+                </div>
+                <div class="line-doing" id="line-doing"></div>
+                <div class="border-doing" id="border-doing">
+                    <div class="doing-item" id="doing-item">
+                        <div class="Marketing" id="Marketing">
+                            <div class="Marketing-text" id="Marketing-text">
+                                Marketing
+                            </div>
+                        </div>
+                        <div class="edit" id="edit">
+                            <img src="./assests/img/êdit.svg" alt="">
+                        </div>
+                        <div class="delete" id="delete">
+                            <img src="./assests/img/recycle.svg" alt="">
+                        </div>
+                        <div class="body-item" id="body-item">
+                            <div class="body-item-text" id="body-item-text">
+                                Write SEO article for new product
+                            </div>
+                        </div>
+                        <div class="under-line" id="under-line"></div>
+                        <div class="footer-item" id="footer-item">
+                            <div class="footer-item-text" id="footer-item-text">
+                                This is an existenitial moment for effective altruism and the rationlist community writ-large.
+                            </div>
+                        </div>
+                        <div class="clock" id="clock">
+                            <img src="./assests/img/clock.svg" alt="">
+                        </div>
+                        <div class="day-month-year" id="day-month-year">
+                            <div class="day-month-year-text" id="day-month-year-text">
+                                June 30, 2022
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-completed" id="box-completed">
+                <div class="header-completed" id="header-completed">
+                <div class="completed" id="completed">
+                    <p>Completed</p>
+                </div>
+                <div class="number-completed" id="number-completed">
+                    <span class="number-3">3</span>
+                </div>
+                </div>
+                <div class="line-completed" id="line-completed"></div>
+                <div class="border-completed" id="border-completed">
+                    <div class="completed-item" id="completed-item">
+                        <div class="Marketing" id="Marketing">
+                            <div class="Marketing-text" id="Marketing-text">
+                                Marketing
+                            </div>
+                        </div>
+                        <div class="edit" id="edit">
+                            <img src="./assests/img/êdit.svg" alt="">
+                        </div>
+                        <div class="delete" id="delete">
+                            <img src="./assests/img/recycle.svg" alt="">
+                        </div>
+                        <div class="body-item" id="body-item">
+                            <div class="body-item-text" id="body-item-text">
+                                Write SEO article for new product
+                            </div>
+                        </div>
+                        <div class="under-line" id="under-line"></div>
+                        <div class="footer-item" id="footer-item">
+                            <div class="footer-item-text" id="footer-item-text">
+                                This is an existenitial moment for effective altruism and the rationlist community writ-large.
+                            </div>
+                        </div>
+                        <div class="clock" id="clock">
+                            <img src="./assests/img/clock.svg" alt="">
+                        </div>
+                        <div class="day-month-year" id="day-month-year">
+                            <div class="day-month-year-text" id="day-month-year-text">
+                                June 30, 2022
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-blocked" id="box-blocked">
+                <div class="header-blocked" id="header-blocked">
+                <div class="blocked" id="blocked">
+                    <p>Blocked</p>
+                </div>
+                <div class="number-blocked" id="number-blocked">
+                    <span class="number-4">3</span>
+                </div>
+                </div>
+                <div class="line-blocked" id="line-blocked"></div>
+                <div class="border-blocked" id="border-blocked">
+                    <div class="blocked-item" id="blocked-item">
+                        <div class="Marketing" id="Marketing">
+                            <div class="Marketing-text" id="Marketing-text">
+                                Marketing
+                            </div>
+                        </div>
+                        <div class="edit" id="edit">
+                            <img src="./assests/img/êdit.svg" alt="">
+                        </div>
+                        <div class="delete" id="delete">
+                            <img src="./assests/img/recycle.svg" alt="">
+                        </div>
+                        <div class="body-item" id="body-item">
+                            <div class="body-item-text" id="body-item-text">
+                                Write SEO article for new product
+                            </div>
+                        </div>
+                        <div class="under-line" id="under-line"></div>
+                        <div class="footer-item" id="footer-item">
+                            <div class="footer-item-text" id="footer-item-text">
+                                This is an existenitial moment for effective altruism and the rationlist community writ-large.
+                            </div>
+                        </div>
+                        <div class="clock" id="clock">
+                            <img src="./assests/img/clock.svg" alt="">
+                        </div>
+                        <div class="day-month-year" id="day-month-year">
+                            <div class="day-month-year-text" id="day-month-year-text">
+                                June 30, 2022
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./assests/js/script.js"></script>
+</html>
